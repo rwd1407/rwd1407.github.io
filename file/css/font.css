@@ -1,0 +1,34 @@
+/* 나눔고딕 */
+@font-face {
+	font-family: 'NanumGothic', '나눔고딕', sas-serif !important;
+	src: url('/file/font/NanumGothic.eot');
+	src: local('※'), 
+	url('/file/font/NanumGothic.woff') format('woff'), 
+	url('/file/font/NanumGothic.ttf') format('truetype')
+}
+  
+/* 나눔 손글씨 */
+@font-face {
+    font-family:'Nanum Pen Script';
+    font-style:normal;
+    font-weight:400;
+    src: url(//cdn.jsdelivr.net/font-nanum/1.0/nanumpenscript/v2/NanumPenScript-Regular.eot);
+    src: url(//cdn.jsdelivr.net/font-nanum/1.0/nanumpenscript/v2/NanumPenScript-Regular.eot?#iefix) format('embedded-opentype'),
+    url(//cdn.jsdelivr.net/font-nanum/1.0/nanumpenscript/v2/NanumPenScript-Regular.woff) format('woff'),
+    url(//cdn.jsdelivr.net/font-nanum/1.0/nanumpenscript/v2/NanumPenScript-Regular.ttf) format('truetype')
+}
+
+/* 상상토끼 : 신과장 체 */
+@font-face {
+    font-family: 'SangSangShin';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/SangSangShin.woff') format('woff');
+    font-weight: normal; font-style: normal;
+}
+
+/* 상상토끼 : 개미똥꾸멍 체 */
+@font-face {
+    font-family: 'SangSangAnt';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/SangSangAnt.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

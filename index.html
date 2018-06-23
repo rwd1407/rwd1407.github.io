@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>.:: 쇼핑몰 ::.</title>
+
+    <!-- 모바일 view -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes">
+    
+    <!-- 부트스트랩 4.1 -->
+    <!-- 참고 : http://getbootstrap.com/docs/4.1/components/alerts/ -->
+    <script src="/file/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="/file/css/bootstrap.min.css"/>
+    <script src="/file/js/popper.min.js"></script>
+    <script src="/file/js/bootstrap.min.js"></script>
+    
+    <!-- Customize Nav-bar -->
+    <link rel="stylesheet" href="/file/nav-bar/agency.min.css"/>
+    <link rel="stylesheet" href="/file/css/customize.css"/>
+    <script type="text/javascript" src="/file/nav-bar/bootstrap.bundle.min.js"></script>
+    
+    <!-- 부드러운 스크롤 -->
+    <script type="text/javascript" src="/file/js/smooth-scroll.js"></script>
+    
+    <!-- 폰트어썸 5버전 -->
+    <link href="https://use.fontawesome.com/releases/v5.0.2/css/all.css" rel="stylesheet">
+    <!-- 참고 : https://fontawesome.com/icons -->
+    
+    <!-- 폰트 정의 -->
+    <!-- NanumGothic, Nanum Pen Script, SangSangShin, SangSangAnt -->
+    <link href="/file/css/font.css" rel="stylesheet">
+    <!-- Nanum Brush Script -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
+    
+    <!-- Typed.js -->
+    <script type="text/javascript" src="/file/js/typed/typed.min.js"></script>
+    <script type="text/javascript" src="/file/js/typed/demos.js"></script>
+    
+    <!-- 폰트 -->
+    <style>
+  	/* 웹 페이지 기본 글씨체 */
+  	body{
+        font-family: 'NanumGothic', '나눔고딕', sas-serif !important;
+        font-size: 15px;
+  	}
+    </style>
+    
+    <script>
+    $(document).ready(function(){ 
+    var numberOfImages=3; 
+    var imageNum = Math.round(Math.random()*(numberOfImages-1))+1; 
+    var imgPath=('/file/img/main_background'+imageNum+'.jpg'); 
+    $('#mainbg_mobile').css('background-image', ('url("'+imgPath+'")')); 
+    });
+    </script>
+    
+    <style type="text/css"> 
+    #mainbg_mobile { 
+        height: 500px;
+        background-repeat: no-repeat; 
+        background-position: center/cover;
+    } 
+    </style>
+    <script type="text/javascript" src="/file/js/search.js"></script>
+    
+    </head>
+    <body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" style="font-family: 'Nanum Pen Script';" href="/">쇼핑몰</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            메뉴
+            <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="http://gmarket.com" target="_blank">G마켓</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="http://www.auction.co.kr" target="_blank">옥션</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="http://www.g9.co.kr/" target="_blank">G9</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#" style="color: yellow" data-toggle="modal" data-target="#login">로그인</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#" style="color: #ffbfeb">회원가입</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Typed.js 문자 리스트 -->
+    <div id="shopping_mall">
+        <p>노트북</p>
+        <p>온라인 치킨배달</p>
+        <p>플레이 스테이션</p>
+        <p>명품</p>
+        <p>가구</p>
+    </div>
+      
+    <!-- 메인 -->
+    <div id="mainbg_mobile">
+        <div class="col-md-12" style="position:absolute; top:0; z-index:1000; margin-top: 200px; color: white; font-size: 60px;">
+            <center>
+                <div style="font-size: 50px;">오늘은 <span id="typed" style="color: yellow; font-size: 60px; font-family: 'Nanum Brush Script'"></span> 지름신 하는 날.</div>
+                <div id="scrollable-dropdown-menudropdown-menu" class="col-md-4" style="margin-top: 20px; font-size: 20px;">
+                    <form id="searchForm" method="get">
+                        <div class="row">
+                            <div class="col-md-10"><input class="search_form col-md-12" type="text" id="searchText" placeholder="검색" onfocus="searchBarFocus()" onblur="searchBarFocus()"></div>
+                            <div class="col-md-2"><input type="submit" value="검색" class="btn btn-primary" onclick="searchFunc()" id="searchButton"></div>
+                        </div>
+                    </form>
+                </div>
+        </center>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div align="center" style="font-family: 'SangSangShin'; font-size: 80px;">오늘의 Best 3 상품</div>
+        <!-- 부트스트랩 : Navs -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#appliance" role="tab" aria-controls="appliance" aria-selected="true">가전제품</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#food" role="tab" aria-controls="food" aria-selected="false">야식/먹방</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#accessory" role="tab" aria-controls="accessory" aria-selected="false">악세사리</a>
+            </li>
+        </ul>
+        
+        <div class="tab-content" id="myTabContent" style="margin-bottom: 100px;">
+            <div class="tab-pane fade show active" id="appliance" role="tabpanel" aria-labelledby="appliance-tab">
+                <!-- 가전제품 : 에어컨 -->
+                <a href="https://goo.gl/BgCquR" style="color: black;">
+                <div class="row">
+                    <div align="center" class="col-md-1" style="font-size: 90px; font-weight: bold; color: orange;">1</div>
+                    <div class="col-md-2"><img width="150px;" src="/file/img/goods/aircondition.png"></div>
+                    <div class="col-md-9" style="margin-top: 30px;">
+                        <span style="font-size: 30px; font-weight: bold;">수냉식 에어컨</span>
+                        <span style="margin-left: 30px; color: #9c9c9c">850,000원</span>
+                        <hr/>
+                        <span>뛰어난 제습 기능과 에어컨의 기능을 한번에!<br/>프루센 수냉식에어컨 실외기가 필요없는 JEN-08C</span>
+                    </div>
+                </div>
+                </a>
+                <hr/>
+                <!-- 가전제품 : 맥북 -->
+                <a href="https://goo.gl/gWQcSf" style="color: black;">
+                <div class="row">
+                    <div align="center" class="col-md-1" style="font-size: 70px; font-weight: bold; color: #ff0bf6;">2</div>
+                    <div class="col-md-2"><img width="150px;" src="/file/img/goods/mac.png"></div>
+                    <div class="col-md-9" style="margin-top: 30px;">
+                        <span style="font-size: 30px; font-weight: bold;">APPLE 2017 MacBook 12형</span>
+                        <span style="margin-left: 30px; color: #9c9c9c">1,605,500원</span>
+                        <hr/>
+                        <span>
+                            - 해상도 : 2034 × 1440<br/>
+                            - SSD 256GB<br/>
+                            - 메모리 : 8GB (16GB 업그레이드 가능)<br/>
+                            - 배터리 : 무선 배터리 최대 10시간<br/>
+                            - ...<br/>
+                        </span>
+                    </div>
+                </div>
+                </a>
+                <hr/>
+                <!-- 가전제품 : PS4 -->
+                <a href="https://goo.gl/hWFfDb" style="color: black;">
+                <div class="row">
+                    <div align="center" class="col-md-1" style="font-size: 70px; font-weight: bold; color: #5192f7;">3</div>
+                    <div class="col-md-2"><img width="150px;" src="/file/img/goods/PS4.png"></div>
+                    <div class="col-md-9" style="margin-top: 30px;">
+                        <span style="font-size: 30px; font-weight: bold;">PS4</span>
+                        <span style="margin-left: 30px; color: #9c9c9c">378,000원</span>
+                        <hr/>
+                        <span>
+                            PS4 본체 신형 500GB HITS 번들팩 / 플레이스테이션4
+                        </span>
+                    </div>
+                </div>
+                </a>
+                <hr/>
+            </div>
+            <div class="tab-pane fade" id="food" role="tabpanel" aria-labelledby="food-tab">
+                <!-- 음식 : 치킨 -->
+                <a href="http://rpp.gmarket.co.kr/?exhib=16200" style="color: black;">
+                <div class="row">
+                    <div align="center" class="col-md-1" style="font-size: 90px; font-weight: bold; color: orange;">1</div>
+                    <div class="col-md-2"><img width="150px;" src="/file/img/goods/chicken.png"></div>
+                    <div class="col-md-9" style="margin-top: 30px;">
+                        <span style="font-size: 30px; font-weight: bold;">치킨</span>
+                        <span style="margin-left: 30px; color: #9c9c9c">온라인 주문</span>
+                        <hr/>
+                        <span>
+                            전국민이 찬양하는 음식, 치킨!!
+                        </span>
+                    </div>
+                </div>
+                </a>
+                <hr/>
+                
+                <!-- 음식 : 피자 -->
+                <a href="https://goo.gl/YKqDkX" style="color: black;">
+                <div class="row">
+                    <div align="center" class="col-md-1" style="font-size: 70px; font-weight: bold; color: #ff0bf6;">2</div>
+                    <div class="col-md-2"><img width="150px;" src="/file/img/goods/pizza.png"></div>
+                    <div class="col-md-9" style="margin-top: 30px;">
+                        <span style="font-size: 30px; font-weight: bold;">피자</span>
+                        <span style="margin-left: 30px; color: #9c9c9c">온라인 주문</span>
+                        <hr/>
+                        <span>
+                            [도미노 피자] 배달 피자의 개념이 전무했던 1990년, 한국 도미노 국내 최초 피자 배달전문 브랜드로서 고객이 원하는 가장 맛있고 영양 높은 피자를 가장 친절하게 고객들에게 제공하는 국내 최대 배달 피자 브랜드로 자리 매김하고 있습니다.
+                        </span>
+                    </div>
+                </div>
+                </a>
+                <hr/>
+                
+                <!-- 음식 : 보쌈 -->
+                <a href="https://bossam.co.kr/" style="color: black;">
+                <div class="row">
+                    <div align="center" class="col-md-1" style="font-size: 70px; font-weight: bold; color: #5192f7;">3</div>
+                    <div class="col-md-2"><img width="150px;" src="/file/img/goods/fork.png"></div>
+                    <div class="col-md-9" style="margin-top: 30px;">
+                        <span style="font-size: 30px; font-weight: bold;">원할머니 보쌈</span>
+                        <span style="margin-left: 30px; color: #9c9c9c">온라인 주문</span>
+                        <hr/>
+                        <span>
+                            보쌈의 원조, 원할머니 보쌈 ~ ♪
+                        </span>
+                    </div>
+                </div>
+                </a>
+                <hr/>
+            </div>
+            <div class="tab-pane fade" id="accessory" role="tabpanel" aria-labelledby="accessory-tab">
+                <!-- 악세서리 : 루비이통 -->
+                <a href="https://goo.gl/Li8JFz" style="color: black;">
+                <div class="row">
+                    <div align="center" class="col-md-1" style="font-size: 90px; font-weight: bold; color: orange;">1</div>
+                    <div class="col-md-2"><img width="150px;" src="/file/img/goods/Louis.png"></div>
+                    <div class="col-md-9" style="margin-top: 30px;">
+                        <span style="font-size: 30px; font-weight: bold;">루이비통</span>
+                        <span style="margin-left: 30px; color: #9c9c9c">1,910,000원</span>
+                        <hr/>
+                        <span>
+                            루이비통 튀렌느 PM
+                        </span>
+                    </div>
+                </div>
+                </a>
+                <hr/>
+                
+                <!-- 악세서리 : 샤넬 -->
+                <a href="https://goo.gl/TSgLNf" style="color: black;">
+                <div class="row">
+                    <div align="center" class="col-md-1" style="font-size: 70px; font-weight: bold; color: #ff0bf6;">2</div>
+                    <div class="col-md-2"><img width="150px;" src="/file/img/goods/chanel.png"></div>
+                    <div class="col-md-9" style="margin-top: 30px;">
+                        <span style="font-size: 30px; font-weight: bold;">샤넬</span>
+                        <span style="margin-left: 30px; color: #9c9c9c">2,750,000원</span>
+                        <hr/>
+                        <span>
+                            제이에스부띠끄샤넬 WOC 캐비어 블랙은장    
+                        </span>
+                    </div>
+                </div>
+                </a>
+                <hr/>
+                
+                <!-- 악세서리 : 롤렉스 -->
+                <a href="https://goo.gl/kzbBNT" style="color: black;">
+                <div class="row">
+                    <div align="center" class="col-md-1" style="font-size: 70px; font-weight: bold; color: #5192f7;">3</div>
+                    <div class="col-md-2"><img width="150px;" src="/file/img/goods/rolex.png"></div>
+                    <div class="col-md-9" style="margin-top: 30px;">
+                        <span style="font-size: 30px; font-weight: bold;">롤렉스 시계</span>
+                        <span style="margin-left: 30px; color: #9c9c9c">18,365,180원</span>
+                        <hr/>
+                        <span>
+                            Rolex Submariner Black Dial Stainless Steel Automatic Mens Watch 114060
+                        </span>
+                    </div>
+                </div>
+                </a>
+                <hr/>
+            </div>
+        </div>
+        <!-- 부트스트랩 : Navs 종료 -->
+    </div>
+    
+    <div align="center" style="background-color: black; color: white; padding: 50px;">
+        2018 기말고사 제출용 홈페이지<br/>
+        (학번) 이정환
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">로그인</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="login.html" method="get">
+                <div class="row">
+                    <div align="right" class="col-md-3">아이디 : </div>
+                    <div class="col-md-9"><input class="sign_form col-md-12" type="text" id="user_id" placeholder="아이디"></div>
+                </div>
+                <div class="row">
+                    <div align="right" class="col-md-3">비밀번호 : </div>
+                    <div class="col-md-9"><input class="sign_form col-md-12" type="text" id="user_password" placeholder="비밀번호"></div>
+                </div>
+                <div align="right" style="margin-top: 10px;">
+                    <input type="submit" class="btn btn-sm btn-primary" value="로그인">
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Customize Nav-bar -->
+    <script type="text/javascript" src="/file/nav-bar/agency.min.js"></script>
+</body>
